@@ -18,7 +18,7 @@
     <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_agde5pma.json" background="transparent" speed="1"
         style="width: 300px; height: 300px;" loop autoplay></lottie-player>
 
-    <h1 style="margin-left: 220px; margin-top: 50px"> Horta 2.0 </h1>
+    <h1 style="margin-left: 220px; margin-top: 50px">🍋 LemonPi 🪴</h1>
 
     <div id="dht11">
         <div class="block">
@@ -72,77 +72,17 @@
 
     </div>
 
-    <div id="containers" class="grid-container">
-        <div>
-            <div class="block">
-                <div id="gauge4" class="gauge">
-                    <script>
-                        var gauge4 = new JustGage({
-                            id: "gauge4",
-                            value: 123, < !--{{ light }}, -->
-                                levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
-                                    min: 0,
-                                        decimals: 0,
-                                            max: 1024,
-                                                title: "Tomate"
-            });
-                    </script>
+    <footer>
+        <div class="footerCol">
+            <div class="container">
+                <div class="copyrightCol">
+                    <p>©
+                        <script>document.write(new Date().getFullYear());</script> Developed by Gonçalo Calvinho.
+                    </p>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="block">
-                <div id="gauge5" class="gauge">
-                    <script>
-                        var gauge5 = new JustGage({
-                            id: "gauge5",
-                            value: 432,< !--{{ temp }}, -->
-                                levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
-                                    min: 0,
-                                        decimals: 0,
-                                            max: 1024,
-                                                title: "Alface 1"
-            });
-                    </script>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="block">
-                <div id="gauge6" class="gauge">
-                    <script>
-                        var gauge6 = new JustGage({
-                            id: "gauge6",
-                            value: 765,< !--{{ temp }}, -->
-                                levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
-                                    min: 0,
-                                        decimals: 0,
-                                            max: 1024,
-                                                title: "Alface 2"
-            });
-                    </script>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="block">
-                <div id="gauge7" class="gauge">
-                    <script>
-                        var gauge7 = new JustGage({
-                            id: "gauge7",
-                            value: 987,< !--{{ temp }}, -->
-                                levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
-                                    min: 0,
-                                        decimals: 0,
-                                            max: 1024,
-                                                title: "Pimento"
-            });
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p>@2020 Developed by Gonçalo Calvinho</p>
+    </footer>
 
 </body>
 
