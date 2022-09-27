@@ -31,7 +31,7 @@ def index():
     soil_sensor.set_addr_ADS1115(0x48)
     # Get the Digital Value of Analog of selected channel
     value = soil_sensor.read_voltage(0)
-    soil_moisture = convertSoil(value)
+    soil_moisture = convertSoil(value['r'])
 
     # variables to pass through to the web page
     templateData = {

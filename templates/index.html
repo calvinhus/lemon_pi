@@ -28,6 +28,9 @@
 </head>
 
 <body>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_wkwhebyo.json" background="transparent" speed="1"
+        style="width: 150px; height: 150px;" loop autoplay></lottie-player>
 
     <h1 style="margin-left: 220px; margin-top: 50px"> Horta 2.0 </h1>
 
@@ -72,9 +75,9 @@
                         id: "gauge3",
                         value: {{ soil_moisture }},
                     symbol: "mV",
-                        min: 1000,
+                        min: 0,
                             decimals: 2,
-                                max: 3000,
+                                max: 100,
                                     title: "Soil Moisture"
                 });
                 </script>
