@@ -13,5 +13,10 @@ while True:
     ads1115.set_addr_ADS1115(0x48)
     # Get the Digital Value from selected channel
     adc0 = ads1115.read_voltage(0)
+    value = adc0['r']
+    # values are between 2700mV (Dry) and 1130mV (Wet) approximately
+    normal = abs(value - 2700)/100
+    # normalized values are between 0 and 16 approximately
+    percnt = round((normal/16)*100, 2)
     time.sleep(0.2)
-    print(f"Channel 0: {adc0['r']} mV")
+    print(f"mV: {value} | Normalized: {normal} | Percent: {percnt}")
