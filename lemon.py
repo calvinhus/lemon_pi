@@ -29,7 +29,7 @@ def index():
         'humidity': 75,
         'temperature': 35,
         'light': 125,
-        'temp': soil_moisture
+        'soil_moisture': soil_moisture
     }
     # when a html request has been made return these values
     return render_template('index.html', **templateData)
