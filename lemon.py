@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from locale import normalize
 from DFRobot_ADS1115 import ADS1115
 import os
 import sys
@@ -11,17 +12,26 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 soil_sensor = ADS1115()
 
+
+def convertSoil(data):
+    # Soil Moisture Sensor values are between 2700mV (Dry) and 1130mV (Wet) approximately
+    normal = abs(data - 2700)
+    return normal/100
+
+
 app = Flask(__name__)
 
-
 # home route
+
+
 @app.route('/')
 def index():
 
     # Set the IIC address
     soil_sensor.set_addr_ADS1115(0x48)
     # Get the Digital Value of Analog of selected channel
-    soil_moisture = soil_sensor.read_voltage(0)
+    value = soil_sensor.read_voltage(0)
+    soil_moisture = convertSoil(value)
 
     # variables to pass through to the web page
     templateData = {
