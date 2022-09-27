@@ -18,7 +18,7 @@
     <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_agde5pma.json" background="transparent" speed="1"
         style="width: 300px; height: 300px;" loop autoplay></lottie-player>
 
-    <h1 style="margin-left: 220px; margin-top: 50px">🍋 LemonPi 🪴</h1>
+    <h1 style="margin-left: 220px; margin-top: 50px">LemonPi 🪴</h1>
 
     <div id="dht11">
         <div class="block">
@@ -60,7 +60,7 @@
                     var gauge3 = new JustGage({
                         id: "gauge3",
                         value: {{ soil_moisture }},
-                    symbol: "mV",
+                    symbol: "%",
                         min: 0,
                             decimals: 2,
                                 max: 100,
@@ -76,7 +76,7 @@
         <div class="footerCol">
             <div class="container">
                 <div class="copyrightCol">
-                    <p>©
+                    <p style="color: #18A558;">©
                         <script>document.write(new Date().getFullYear());</script> Developed by Gonçalo Calvinho.
                     </p>
                 </div>
