@@ -33,10 +33,10 @@
 
     <div id="dht11">
         <div class="block">
-            <div id="gauge3" class="gauge">
+            <div id="gauge1" class="gauge">
                 <script>
-                    var gauge4 = new JustGage({
-                        id: "gauge3",
+                    var gauge1 = new JustGage({
+                        id: "gauge1",
                         value: {{ temperature }},
                     levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
                         symbol: '\u2103',
@@ -50,10 +50,10 @@
         </div>
 
         <div class="block">
-            <div id="gauge4" class="gauge">
+            <div id="gauge2" class="gauge">
                 <script>
-                    var gauge5 = new JustGage({
-                        id: "gauge4",
+                    var gauge2 = new JustGage({
+                        id: "gauge2",
                         value: {{ humidity }},
                     symbol: "%",
                         min: 0,
@@ -66,10 +66,10 @@
         </div>
 
         <div class="block">
-            <div id="gauge4" class="gauge">
+            <div id="gauge3" class="gauge">
                 <script>
-                    var gauge5 = new JustGage({
-                        id: "gauge4",
+                    var gauge3 = new JustGage({
+                        id: "gauge3",
                         value: {{ soil_moisture }},
                     symbol: "mV",
                         min: 1000,
@@ -86,10 +86,10 @@
     <div id="containers" class="grid-container">
         <div>
             <div class="block">
-                <div id="gauge1" class="gauge">
+                <div id="gauge4" class="gauge">
                     <script>
-                        var gauge = new JustGage({
-                            id: "gauge1",
+                        var gauge4 = new JustGage({
+                            id: "gauge4",
                             value: 123, < !--{{ light }}, -->
                                 levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
                                     min: 0,
@@ -103,10 +103,10 @@
         </div>
         <div>
             <div class="block">
-                <div id="gauge2" class="gauge">
+                <div id="gauge5" class="gauge">
                     <script>
-                        var gauge = new JustGage({
-                            id: "gauge2",
+                        var gauge5 = new JustGage({
+                            id: "gauge5",
                             value: 432,< !--{{ temp }}, -->
                                 levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
                                     min: 0,
@@ -122,7 +122,7 @@
             <div class="block">
                 <div id="gauge6" class="gauge">
                     <script>
-                        var gauge = new JustGage({
+                        var gauge6 = new JustGage({
                             id: "gauge6",
                             value: 765,< !--{{ temp }}, -->
                                 levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
@@ -139,7 +139,7 @@
             <div class="block">
                 <div id="gauge7" class="gauge">
                     <script>
-                        var gauge = new JustGage({
+                        var gauge7 = new JustGage({
                             id: "gauge7",
                             value: 987,< !--{{ temp }}, -->
                                 levelColors: ['#58D68D', '#F4D03F', '#EC7063'],
