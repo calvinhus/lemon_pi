@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="5">
+<meta http-equiv="refresh" content="15">
 
 <script src="{{url_for('static', filename='javascript/justgage.js')}}"></script>
 <script src="{{url_for('static', filename='javascript/raphael-2.1.4.min.js')}}"></script>
@@ -16,8 +16,6 @@
 <body>
 
     <h1 style="margin-left: 220px; margin-top: 50px">🪴 LemonPi 🪴</h1>
-
-    <img src="{{url_for('static', filename='images/lemon.png')}}">
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_agde5pma.json" background="transparent" speed="1"
@@ -73,6 +71,8 @@
         </div>
 
     </div>
+
+    <img src="{{url_for('static', filename='images/lemon.png')}}">
 
     <footer>
         <div class="footerCol">
