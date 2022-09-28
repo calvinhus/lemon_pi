@@ -12,13 +12,10 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 
 def getTemperature():
-
     temp_sensor = adafruit_dht.DHT11(board.D23)
     temperature = temp_sensor.temperature
     humidity = temp_sensor.humidity
 
-    if humidity is None or temperature is None:
-        return 23.45, 56.78
     return temperature, humidity
 
 
@@ -46,12 +43,12 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    temperature, humidity = getTemperature()
+    # temperature, humidity = getTemperature()
     soil_moisture = getSoilMoisture()
     # variables to pass through to the web page
     templateData = {
-        'humidity': round(humidity, 2),
-        'temperature': round(temperature, 2),
+        'humidity': 23.45,  # round(humidity, 2),
+        'temperature': 56.78,  # round(temperature, 2),
         'soil_moisture': round(soil_moisture, 2)
     }
     # when a html request has been made return these values
