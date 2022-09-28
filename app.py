@@ -1,16 +1,34 @@
 #!/usr/bin/python3
-
-from locale import normalize
 from DFRobot_ADS1115 import ADS1115
 import os
 import sys
 import time
+import board
+import adafruit_dht
 from flask import Flask, render_template, request
 
 sys.path.append('../')
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
-soil_sensor = ADS1115()
+
+def getTemperature():
+
+    temp_sensor = adafruit_dht.DHT11(board.D23)
+    temperature = temp_sensor.temperature
+    humidity = temp_sensor.humidity
+
+    if humidity is None or temperature is None:
+        return 23.45, 56.78
+    return temperature, humidity
+
+
+def getSoilMoisture():
+    soil_sensor = ADS1115()
+    # set the IIC address
+    soil_sensor.set_addr_ADS1115(0x48)
+    # get the digital values from analog selected channel
+    value = soil_sensor.read_voltage(0)
+    return convertSoil(value['r'])
 
 
 def convertSoil(data):
@@ -28,19 +46,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    # set the IIC address
-    soil_sensor.set_addr_ADS1115(0x48)
-    # get the digital values from analog selected channel
-    value = soil_sensor.read_voltage(0)
-    soil_moisture = convertSoil(value['r'])
-
+    temperature, humidity = getTemperature()
+    soil_moisture = getSoilMoisture()
     # variables to pass through to the web page
     templateData = {
-        'title': 'Smart Garden',
-        'humidity': 75,
-        'temperature': 35,
-        'light': 125,
-        'soil_moisture': round(soil_moisture,2)
+        'humidity': round(humidity, 2),
+        'temperature': round(temperature, 2),
+        'soil_moisture': round(soil_moisture, 2)
     }
     # when a html request has been made return these values
     return render_template('index.html', **templateData)
