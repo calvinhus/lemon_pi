@@ -47,8 +47,8 @@ def index():
     soil_moisture = getSoilMoisture()
     # variables to pass through to the web page
     templateData = {
-        'humidity': 23.45,  # round(humidity, 2),
-        'temperature': 56.78,  # round(temperature, 2),
+        'humidity': 50,  # round(humidity, 2),
+        'temperature': 25,  # round(temperature, 2),
         'soil_moisture': round(soil_moisture, 2)
     }
     # when a html request has been made return these values
