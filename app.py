@@ -22,7 +22,7 @@ def getTemperature():
 def getSoilMoisture():
     soil_sensor = ADS1115()
     # set the IIC address
-    soil_sensor.set_addr_ADS1115(0x48)
+    soil_sensor.set_addr_ADS1115(0x49)
     # get the digital values from analog selected channel
     value = soil_sensor.read_voltage(0)
     return convertSoil(value['r'])
