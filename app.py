@@ -3,10 +3,11 @@ from DFRobot_ADS1115 import ADS1115
 import os
 import sys
 import time
+from datetime import datetime
 import board
 import adafruit_dht
 from picamera import PiCamera
-from flask import Flask, render_template, request
+from flask import Flask, render_template, send_file
 
 sys.path.append('../')
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
@@ -56,10 +57,16 @@ def index():
 
 @app.route('/picture')
 def get_picture():
+    # create Camera object
     camera = PiCamera()
-    path = '/home/pi/lemon_pi/static/images/picture.jpg'
-    camera.capture(path)
-    return f'<img src="{path}">'
+    # set name of picture: path + timestamp
+    path = "/home/pi/lemon_pi/static/images/"
+    timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mm")
+    full_path = path + timestamp + ".jpg"
+    # take picture
+    camera.capture(full_path)
+
+    return send_file(full_path)
 
 
 if __name__ == '__main__':
