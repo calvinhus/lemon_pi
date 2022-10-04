@@ -27,7 +27,7 @@
                     var gauge1 = new JustGage({
                         id: "gauge1",
                         value: {{ temperature }},
-                        levelColors: ['#A8C7F2', '#58D68D', '#EC7063'],
+                    levelColors: ['#A8C7F2', '#58D68D', '#EC7063'],
                         symbol: '\u2103',
                             min: 0,
                                 decimals: 1,
@@ -44,12 +44,12 @@
                     var gauge2 = new JustGage({
                         id: "gauge2",
                         value: {{ humidity }},
-                        levelColors: ['#A8C7F2', '#58D68D', '#EC7063'],
-                    symbol: "%",
-                        min: 0,
-                            decimals: 2,
-                                max: 100,
-                                    title: "Humidity"
+                    levelColors: ['#A8C7F2', '#58D68D', '#EC7063'],
+                        symbol: "%",
+                            min: 0,
+                                decimals: 2,
+                                    max: 100,
+                                        title: "Humidity"
                 });
                 </script>
             </div>
@@ -61,25 +61,17 @@
                     var gauge3 = new JustGage({
                         id: "gauge3",
                         value: {{ soil_moisture }},
-                        levelColors: ['#A8C7F2', '#58D68D', '#EC7063'],
+                    levelColors: ['#A8C7F2', '#58D68D', '#EC7063'],
                         symbol: "%",
-                        min: 0,
-                            decimals: 2,
-                                max: 100,
-                                    title: "Soil Moisture"
+                            min: 0,
+                                decimals: 2,
+                                    max: 100,
+                                        title: "Soil Moisture"
                 });
                 </script>
             </div>
         </div>
 
-    </div>
-
-    <div id="picture">
-        <div class="block">
-            <div id="gauge4" class="gauge">
-                <img src="{{url_for('static', filename='images/lemon.png')}}">
-            </div>
-        </div>
     </div>
 
     <footer>

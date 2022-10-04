@@ -5,6 +5,7 @@ import sys
 import time
 import board
 import adafruit_dht
+from picamera import PiCamera
 from flask import Flask, render_template, request
 
 sys.path.append('../')
@@ -37,8 +38,6 @@ def convertSoil(data):
 
 app = Flask(__name__)
 
-# home route
-
 
 @app.route('/')
 def index():
@@ -53,6 +52,14 @@ def index():
     }
     # when a html request has been made return these values
     return render_template('index.html', **templateData)
+
+
+@app.route('/picture')
+def get_picture():
+    camera = PiCamera()
+    path = '/home/pi/lemon_pi/static/images/picture.jpg'
+    camera.capture(path)
+    return f'<img src="{path}">'
 
 
 if __name__ == '__main__':
