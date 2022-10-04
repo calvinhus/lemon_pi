@@ -10,7 +10,7 @@ ads1115 = ADS1115()
 
 while True:
     # Set the IIC address
-    ads1115.set_addr_ADS1115(0x48)
+    ads1115.set_addr_ADS1115(0x49)
     # Get the Digital Value from selected channel
     adc0 = ads1115.read_voltage(0)
     value = adc0['r']
