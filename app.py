@@ -63,8 +63,9 @@ def get_picture():
     path = "/home/pi/lemon_pi/static/images/"
     timestamp = datetime.now().strftime("%d-%m-%Y_%Hh%Mm")
     full_path = path + timestamp + ".jpg"
-    # take picture
+    # take picture and close camera object
     camera.capture(full_path)
+    camera.close()
 
     return send_file(full_path)
 
