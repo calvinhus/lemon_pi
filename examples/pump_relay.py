@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-pin = 16
+pin = 17
 
 # GPIO setup
 GPIO.setmode(GPIO.BCM)
@@ -17,5 +17,5 @@ def pump_off(pin):
 
 pump_on(pin)
 time.sleep(2)
-#pump_off(pin)
+pump_off(pin)
 GPIO.cleanup()
