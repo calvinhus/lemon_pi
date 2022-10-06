@@ -57,6 +57,8 @@ def index():
 
 @app.route('/picture')
 def get_picture():
+    # clean up old pictures
+    os.system('sudo rm /home/pi/lemon_pi/static/images/*.jpg')
     # create Camera object
     camera = PiCamera()
     # set name of picture: path + timestamp
