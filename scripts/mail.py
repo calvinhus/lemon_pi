@@ -47,4 +47,4 @@ def SendMail(ImgFileName, subject):
     s.quit()
 
 
-# SendMail(image_path)
+#SendMail(image_path, "something just to test")
