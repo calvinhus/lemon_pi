@@ -34,7 +34,7 @@ def soil_moisture(sensor):
 
 def water(pin, level):
     now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    if level < 20:
+    if level < 15:
         GPIO.output(pin, GPIO.HIGH)
         time.sleep(2)
         GPIO.output(pin, GPIO.LOW)

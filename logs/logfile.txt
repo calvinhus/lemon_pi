@@ -1,2 +1,7 @@
 09/10/2022 20:00:01 - No watering needed. Soil moisture is at 33.94%
 13/10/2022 20:00:01 - Lemon tree watered! Soil moisture was at 11.81%
+14/10/2022 20:00:01 - No watering needed. Soil moisture is at 50.5%
+15/10/2022 20:00:01 - No watering needed. Soil moisture is at 41.38%
+16/10/2022 20:00:02 - No watering needed. Soil moisture is at 31.13%
+17/10/2022 20:00:01 - No watering needed. Soil moisture is at 24.38%
+18/10/2022 20:00:01 - No watering needed. Soil moisture is at 19.38%
