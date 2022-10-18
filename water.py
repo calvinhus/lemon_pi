@@ -27,7 +27,8 @@ def water(pin, level):
         # image
         today = datetime.now().strftime("%d-%m-%Y")
         image_path = "/home/pi/lemon_pi/daily_picture/" + today + ".jpg"
-        SendMail(image_path)
+        subject = f"Your lemon tree is healthy! Watered today. Soil moisture is now at {level}%"
+        SendMail(image_path, subject)
 
     else:
         print(f"{now} - No watering needed. Soil moisture is at {level}%")

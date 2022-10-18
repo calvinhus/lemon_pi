@@ -5,7 +5,7 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 from datetime import datetime
-from soil_moisture_sensor import SoilMoistureLevel
+from scripts.soil_moisture_sensor import SoilMoistureLevel
 
 load_dotenv()  # take environment variables from .env.
 
@@ -21,8 +21,10 @@ RECEIVER = os.environ.get('RECEIVER_EMAIL')
 # soil moisture level
 _, _, soil_moisture_percentage = SoilMoistureLevel()
 
+today = datetime.now().strftime("%d-%m-%Y")
 
-def SendMail(ImgFileName):
+
+def SendMail(ImgFileName, subject):
     with open(ImgFileName, 'rb') as f:
         img_data = f.read()
 
@@ -31,8 +33,7 @@ def SendMail(ImgFileName):
     msg['From'] = SENDER
     msg['To'] = RECEIVER
 
-    text = MIMEText(
-        f"Your lemon tree is healthy! Watered today. Soil moisture is at {soil_moisture_percentage}%")
+    text = MIMEText(subject)
     msg.attach(text)
     image = MIMEImage(img_data, name=os.path.basename(ImgFileName))
     msg.attach(image)
