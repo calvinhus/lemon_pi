@@ -3,3 +3,4 @@ lemon_env/
 .DS_Store
 static/images/
 .env
+logs/
