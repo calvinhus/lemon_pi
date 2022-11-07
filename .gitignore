@@ -4,3 +4,4 @@ lemon_env/
 static/images/
 .env
 logs/
+daily_picture/

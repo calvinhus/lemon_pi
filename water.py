@@ -18,7 +18,7 @@ def water(pin, level):
     now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     if level < 15:
         GPIO.output(pin, GPIO.HIGH)
-        time.sleep(2)
+        time.sleep(1)
         GPIO.output(pin, GPIO.LOW)
         # write to logfile
         print(f"{now} - Lemon tree watered! Soil moisture was at {level}%")
@@ -27,7 +27,7 @@ def water(pin, level):
         # image
         today = datetime.now().strftime("%d-%m-%Y")
         image_path = "/home/pi/lemon_pi/daily_picture/" + today + ".jpg"
-        subject = f"Your lemon tree is healthy! Watered today. Soil moisture is now at {level}%"
+        subject = f"Your lemon tree is healthy! Watered today. Soil moisture was at {level}%"
         SendMail(image_path, subject)
 
     else:
